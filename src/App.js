@@ -74,15 +74,17 @@ class Questions extends React.Component {
   render() {
     let correct_One = this.state.green ? "success" : "danger";
     if (this.state.questions.length > this.state.counter) {
+
       if (this.state.questions[this.state.counter].type === "multiple") {
-        this.setState({ answers: this.state.questions[this.state.counter].incorrect_answers });
+        this.state.answers = this.state.questions[this.state.counter].incorrect_answers;
         this.state.answers.push(this.state.questions[this.state.counter].correct_answer);
+        
         if (!this.state.shuffled) {
           this.setState({ answers: shuffle(this.state.answers) });
           this.setState({ shuffled: true })
         }
       } else {
-        this.setState({ answers: ["True", "False"] });
+        this.state.answers = ["True", "False"];
       }
     }
 
