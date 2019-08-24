@@ -99,9 +99,9 @@ class Questions extends React.Component {
           position: 'absolute', left: '50%', top: '50%',
           transform: 'translate(-50%, -50%)', textAlign: "center"
         }}>
-          You've finished!
+          <p style={{color: "#ffffff", fontSize: "24px"}}>You've finished!</p>
             <br />
-          Play again?
+          <p style={{color: "#ffffff", fontSize: "24px"}}>Play again?</p>
             <br />
           <Button onClick={this.refreshPage} variant="primary">Play Again!</Button>
           {/* <button onClick={this.refreshPage}>Play Again</button> */}
@@ -117,7 +117,7 @@ class Questions extends React.Component {
           transform: 'translate(-50%, -50%)',
           textAlign: "center"
         }}>
-          {decodeHtml(this.state.questions[this.state.counter].question)}
+          <p style={{color: "#ffffff", fontSize: "24px"}}>{decodeHtml(this.state.questions[this.state.counter].question)}</p>
 
           <br />
 
@@ -145,7 +145,7 @@ class Questions extends React.Component {
           {/* <Button variant="danger" onClick={this.showAnswer}>Toggle Answer</Button> */}
           {this.state.revealAnswer ?
             <div>
-              Answer: {decodeHtml(this.state.questions[this.state.counter].correct_answer)}
+              <p style={{color: "#ffffff", fontSize: "24px"}}>Answer: {decodeHtml(this.state.questions[this.state.counter].correct_answer)}</p>
               {/* <button onClick={this.nextQuestion}>Next Question</button> */}
               <br />
               <Button variant="primary" onClick={this.nextQuestion}>Next Question</Button>
@@ -168,7 +168,7 @@ class Questions extends React.Component {
             transform: 'translate(-50%, -50%)',
             textAlign: "center"
           }}>
-            {decodeHtml(this.state.questions[this.state.counter].question)}
+            <p style={{color: "#ffffff", fontSize: "24px"}}>{decodeHtml(this.state.questions[this.state.counter].question)}</p>
 
             <br />
 
@@ -185,7 +185,7 @@ class Questions extends React.Component {
             <br />
             {this.state.revealAnswer ?
               <div>
-                Answer: {decodeHtml(this.state.questions[this.state.counter].correct_answer)}
+                <p style={{color: "#ffffff", fontSize: "24px"}}>Answer: {decodeHtml(this.state.questions[this.state.counter].correct_answer)}</p>
                 {/* <button onClick={this.nextQuestion}>Next Question</button> */}
                 <br />
                 <Button variant="primary" onClick={this.nextQuestion}>Next Question</Button>
@@ -251,14 +251,6 @@ class App extends React.Component {
     event.preventDefault();
   }
 
-  componentDidMount() {
-    (window.adsbygoogle = window.adsbygoogle || []).push({
-      google_ad_client: "ca-pub-2854696214899860",
-      enable_page_level_ads: true
-    });
-  }
-
-
   render() {
     return (
       <div>
@@ -270,10 +262,10 @@ class App extends React.Component {
           }}>
             <form onSubmit={this.handleSubmit}>
               <label>
-                Enter how many questions you want from 1 to 50
+                <p style={{color: "#ffffff", fontSize: "24px"}}>Enter how many questions you want from 1 to 50</p>
                 <br />
                 <InputGroup className="mb-3">
-                  <FormControl value={this.state.numOfQuestions} onChange={this.handleChange} />
+                  <FormControl value={this.state.numOfQuestions} onChange={this.handleChange}/>
                 </InputGroup>
               </label>
 
